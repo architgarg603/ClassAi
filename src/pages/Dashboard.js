@@ -4,7 +4,9 @@ import React from "react";
 const Dashboard = () => {
   return (
     <Box p={"65px"}>
-      <Heading mb={"250px"}>BIO101: Intro to Biology</Heading>
+      <Text mb={"250px"} fontSize={"6xl"} fontWeight={"bold"}>
+        BIO101: Intro to Biology
+      </Text>
       <HStack spacing={"150px"}>
         <Box
           maxW="xs"

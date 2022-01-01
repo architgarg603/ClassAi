@@ -6,12 +6,12 @@ import {
   Route,
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Classes from "./pages/Classes";
 import Dashboard from "./pages/Dashboard";
 import Details from "./pages/Details";
 import Homepage from "./pages/Homepage";
 import Lectures from "./pages/Lectures";
-import Videocall from './pages/VideoCall/Videocall'
+import Classes from "./pages/Classes";
+import Videocall from "./pages/VideoCall/Videocall";
 import AppStateProvider, { useAppState } from "./pages/VideoCall/state";
 import { VideoProvider } from "./pages/VideoCall/components/VideoProvider";
 import generateConnectionOptions from "./pages/VideoCall/utils/generateConnectionOptions/generateConnectionOptions";
@@ -35,24 +35,19 @@ const App = () => {
       <AppStateProvider>
         <Switch>
           <Route exact path={"/videocall"} component={VideoApp} />
-          <Route
-            exact
-            path={`/room/:URLRoomName`}
-            component={VideoApp}
-          />
+          <Route exact path={`/room/:URLRoomName`} component={VideoApp} />
           <Route
             exact
             path={`/room/:URLRoomName/:UserName`}
             component={VideoApp}
           />
-      <Route exact path={"/lectures"} component={Lectures} />
-      <Route exact path={"/dashboard"} component={Homepage} />
-      <Route exact path={"/classes"} component={Classes} />
-      <Route exact path={"/details"} component={Details} />
-      <Route exact path={"/"} component={Homepage} />
-    </Switch>
+          <Route exact path={"/lectures"} component={Lectures} />
+          <Route exact path={"/dashboard"} component={Dashboard} />
+          <Route exact path={"/"} component={Classes} />
+          <Route exact path={"/details"} component={Details} />
+        </Switch>
       </AppStateProvider>
-    </Router >
+    </Router>
   );
 };
 

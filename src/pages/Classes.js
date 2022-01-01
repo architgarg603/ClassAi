@@ -1,6 +1,6 @@
 import React from "react";
 import ClassCard from ".././components/ClassCard";
-import { Box, HStack, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, HStack, Wrap, WrapItem, Text } from "@chakra-ui/react";
 import { PlusSquareIcon } from "@chakra-ui/icons";
 const data = [
   {
@@ -35,8 +35,9 @@ const Classes = () => {
   });
   return (
     <>
-      <HStack mr={"93px"} mt={"34px"} justifyContent={"flex-end"}>
+      <HStack ml={"93px"} mt={"34px"} justifyContent={"flex-start"}>
         <PlusSquareIcon w={8} h={8} />
+        <Text>New Class</Text>
       </HStack>
       <Box p={"75px"}>
         <Wrap spacing="118px">{cards}</Wrap>
