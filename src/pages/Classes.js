@@ -1,54 +1,47 @@
 import React from "react";
-import { Box, Badge, Image, Center } from "@chakra-ui/react";
+import ClassCard from ".././components/ClassCard";
+import { Box, HStack, Wrap, WrapItem } from "@chakra-ui/react";
+import { PlusSquareIcon } from "@chakra-ui/icons";
+const data = [
+  {
+    title: "BIO101",
+    subtitle: "Intro to Biology",
+  },
+  {
+    title: "MCV4UN",
+    subtitle: "Calculus and Vectors",
+  },
+  {
+    title: "ENG4UN",
+    subtitle: "English",
+  },
+  {
+    title: "SCH4UN",
+    subtitle: "Chemistry",
+  },
+  {
+    title: "SPH4UN",
+    subtitle: "Physics",
+  },
+];
+
 const Classes = () => {
+  const cards = data.map((item) => {
+    return (
+      <WrapItem>
+        <ClassCard title={item.title} subtitle={item.subtitle} />
+      </WrapItem>
+    );
+  });
   return (
-    <Center>
-      <Box
-        maxW="sm"
-        m={4}
-        borderWidth="1px"
-        borderRadius="lg"
-        overflow="hidden"
-        boxSize={"sm"}
-      >
-        <Image src={"https://bit.ly/2Z4KKcF"} alt={"nothing"} />
-        <Box p="6">
-          <Box display="flex" alignItems="baseline">
-            <Badge borderRadius="full" px="2" colorScheme="teal">
-              New
-            </Badge>
-            <Box
-              color="gray.500"
-              fontWeight="semibold"
-              letterSpacing="wide"
-              fontSize="xs"
-              textTransform="uppercase"
-              ml="2"
-            ></Box>
-          </Box>
-
-          <Box
-            mt="1"
-            fontWeight="semibold"
-            as="h4"
-            lineHeight="tight"
-            isTruncated
-          >
-            BIO101
-          </Box>
-
-          <Box>
-            <Box as="span" color="gray.600" fontSize="sm">
-              Intro to Biology
-            </Box>
-          </Box>
-
-          <Box display="flex" mt="2" alignItems="center">
-            <Box as="span" ml="2" color="gray.600" fontSize="sm"></Box>
-          </Box>
-        </Box>
+    <>
+      <HStack mr={"93px"} mt={"34px"} justifyContent={"flex-end"}>
+        <PlusSquareIcon w={8} h={8} />
+      </HStack>
+      <Box p={"75px"}>
+        <Wrap spacing="118px">{cards}</Wrap>
       </Box>
-    </Center>
+    </>
   );
 };
 
