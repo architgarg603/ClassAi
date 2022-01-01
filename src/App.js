@@ -1,25 +1,62 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Classes from "./pages/Classes";
 import Dashboard from "./pages/Dashboard";
 import Details from "./pages/Details";
 import Homepage from "./pages/Homepage";
 import Lectures from "./pages/Lectures";
-import Videocall from "./pages/Videocall";
+import PrivateRoute from "./pages/VideoCall/components/PrivateRoute/PrivateRoute";
+import config from "./pages/VideoCall/config";
+import AppStateProvider, { useAppState } from "./pages/VideoCall/state";
+import { VideoProvider } from "./pages/VideoCall/components/VideoProvider";
+import generateConnectionOptions from "./pages/VideoCall/utils/generateConnectionOptions/generateConnectionOptions";
+
+const basePath = config.appBasePath || "/videocall";
+
+const VideoApp = () => {
+  const { setError, settings } = useAppState();
+  const connectionOptions = generateConnectionOptions(settings);
+
+  return (
+    <VideoProvider options={connectionOptions} onError={setError}>
+      {/*<ErrorDialog dismissError={() => setError(null)} error={error} />*/}
+      <App />
+    </VideoProvider>
+  );
+};
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/classes" element={<Classes />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/details" element={<Details />} />
-        <Route path="/lectures" element={<Lectures />} />
-        <Route path="/videocall" element={<Videocall />} />
-      </Routes>
-    </BrowserRouter>
+      <AppStateProvider>
+        <Switch>
+          <Route exact path={basePath} component={VideoApp} />
+          <Route
+            exact
+            path={`${basePath}room/:URLRoomName`}
+            component={VideoApp}
+          />
+          <Route
+            exact
+            path={`${basePath}room/:URLRoomName/:UserName`}
+            component={VideoApp}
+          />
+          <Redirect to={basePath} />
+          <Homepage exact path={"/"} />
+          <Dashboard exact path={"/dashboard"} />
+          <Lectures exact path={"/lectures"} />
+          <Classes exact path={"/classes"} />
+          <Details exact path={"/details"} />
+        </Switch>
+      </AppStateProvider>
+    </Router>
   );
 };
 

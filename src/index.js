@@ -4,9 +4,11 @@ import "./index.css";
 import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "./theme.js";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 ReactDOM.render(
   <ChakraProvider theme={theme}>
+    <CssBaseline />
     <React.StrictMode>
       <App />
     </React.StrictMode>
