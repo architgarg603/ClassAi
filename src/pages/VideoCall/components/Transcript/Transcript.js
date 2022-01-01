@@ -27,11 +27,7 @@ const useStyles = makeStyles(() => ({
     border: "none",
     borderRadius: 0,
     position: "fixed",
-<<<<<<< HEAD
-    background: "white",
-=======
     background: "rgb(0, 0, 0, 0.5)",
->>>>>>> a3fb79a6e7059b8c56b240c20796b69f61bdf9b5
     right: 0,
     zIndex: 1500,
   },
@@ -52,11 +48,7 @@ const useStyles = makeStyles(() => ({
     fontSize: 14,
   },
   avatar: {
-<<<<<<< HEAD
-    color: "black",
-=======
     backgroundColor: red[500],
->>>>>>> a3fb79a6e7059b8c56b240c20796b69f61bdf9b5
   },
   transcriptsHeader: {
     display: "flex",
