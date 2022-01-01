@@ -28,8 +28,8 @@ export default function WithSubnavigation() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
+        bg={useColorModeValue("black", "gray")}
+        color={useColorModeValue("gray.600", "black")}
         minH={"118px"}
         py={{ base: 2 }}
         px={{ base: 12 }}
@@ -43,14 +43,14 @@ export default function WithSubnavigation() {
           ml={{ base: -2 }}
           display={{ base: "flex", md: "none" }}
         ></Flex>
-        <HamburgerIcon w={8} h={8} mx={4} />
+        <HamburgerIcon w={8} h={8} mx={4} color={useColorModeValue("white", "black")} />
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             fontWeight={"semibold"}
             fontSize={"24px"}
-            color={useColorModeValue("gray.800", "white")}
+            color={useColorModeValue("white", "black")}
           >
             EdPortal
           </Text>
@@ -72,6 +72,7 @@ export default function WithSubnavigation() {
             fontWeight={400}
             variant={"link"}
             href={"#"}
+            color={'white'}
           >
             Sign In
           </Button>
