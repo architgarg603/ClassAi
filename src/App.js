@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Details from "./pages/Details";
 import Homepage from "./pages/Homepage";
 import Lectures from "./pages/Lectures";
+import Videocall from "./pages/Videocall";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/details" element={<Details />} />
         <Route path="/lectures" element={<Lectures />} />
+        <Route path="/videocall" element={<Videocall />} />
       </Routes>
     </BrowserRouter>
   );

@@ -15,6 +15,7 @@ import {
   PlusSquareIcon,
   ArrowForwardIcon,
 } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 const Lectures = () => {
   return (
     <Box p={"65px"}>
@@ -24,7 +25,10 @@ const Lectures = () => {
         spacing={4}
       >
         <HStack spacing={4}>
-          <ArrowBackIcon w={8} h={8} />
+          <Link to="/dashboard">
+            <ArrowBackIcon w={8} h={8} />
+          </Link>
+
           <Heading>Lectures</Heading>
         </HStack>
         <HStack spacing={4}>
@@ -55,7 +59,9 @@ const Lectures = () => {
             </Text>
           </Flex>
           <Button size="lg" bg="brand.blue" color={"white"}>
-            Go to Lecture <ArrowForwardIcon ml={3} />
+            <Link to="/videocall">
+              Go to Lecture <ArrowForwardIcon ml={3} />
+            </Link>
           </Button>
         </HStack>
         <Flex flexDirection={"column"} mt={150}>
