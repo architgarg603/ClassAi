@@ -54,7 +54,7 @@ const Lectures = () => {
               We went over ur mom blah blah blah random description
             </Text>
           </Flex>
-          <Button size="lg" colorScheme="blue">
+          <Button size="lg" bg="brand.blue" color={"white"}>
             Go to Lecture <ArrowForwardIcon ml={3} />
           </Button>
         </HStack>
@@ -84,7 +84,11 @@ const Lectures = () => {
                 We went over ur mom blah blah blah random description
               </Text>
               <br />
-              <Text fontSize={"20px"} fontWeight={"semibold"} color={"blue"}>
+              <Text
+                fontSize={"20px"}
+                fontWeight={"semibold"}
+                color={"brand.blue"}
+              >
                 View Summary <ArrowForwardIcon />
               </Text>
             </GridItem>
@@ -110,7 +114,11 @@ const Lectures = () => {
                 We went over ur mom blah blah blah random description
               </Text>
               <br />
-              <Text fontSize={"20px"} fontWeight={"semibold"} color={"blue"}>
+              <Text
+                fontSize={"20px"}
+                fontWeight={"semibold"}
+                color={"brand.blue"}
+              >
                 View Summary <ArrowForwardIcon />
               </Text>
             </GridItem>
