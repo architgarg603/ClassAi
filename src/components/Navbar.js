@@ -43,12 +43,12 @@ export default function WithSubnavigation() {
           ml={{ base: -2 }}
           display={{ base: "flex", md: "none" }}
         ></Flex>
-        <HamburgerIcon
+        {/* <HamburgerIcon
           w={8}
           h={8}
           mx={4}
           color={useColorModeValue("white", "black")}
-        />
+        /> */}
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}

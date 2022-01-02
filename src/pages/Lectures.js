@@ -15,8 +15,22 @@ import {
   PlusSquareIcon,
   ArrowForwardIcon,
 } from "@chakra-ui/icons";
-import { Link } from "react-router-dom";
+import { Link, useHistory,  } from "react-router-dom";
+
+
 const Lectures = () => {
+ let history = useHistory()
+const onChangeHandler = (e)=>{
+  console.log(JSON.stringify(e.target.files[0]));
+  // localStorage.setItem("uploadfile", JSON.stringify(e.target.files[0]));
+  history.push({
+    pathname: '/summary',
+    state: { detail: e.target.files[0] }
+});
+  // history.push("/summary");
+}
+
+
   return (
     <Box p={"65px"}>
       <HStack
@@ -33,7 +47,12 @@ const Lectures = () => {
         </HStack>
         <HStack spacing={4}>
           <PlusSquareIcon w={4} h={4} />
-          <Heading size={"md"}>Upload New Lecture</Heading>
+          <Heading size={"md"}>
+            <label style={{ cursor: "pointer" }}>
+              Upload New Lecture
+              <input type={"file"} style={{ display: "none" }} onChange={onChangeHandler} />
+            </label>
+          </Heading>
         </HStack>
       </HStack>
 
