@@ -21,10 +21,10 @@ import Actions from "../components/Actions";
 import Questions from "../components/Questions";
 require('dotenv').config()
 
-const SYMBL_APP_ID =  process.env.REACT_APP_SYMBL_APP_ID
+const SYMBL_APP_ID = process.env.REACT_APP_SYMBL_APP_ID
 const SYMBL_APP_SECRET = process.env.REACT_APP_SYMBL_APP_SECRET
 
-function useInterval(callback, delay, stopFlag) {
+function useInterval(callback, delay, stopFlag, setIntervalId) {
   const savedCallback = useRef()
   //Remember the latest callback
   useEffect(() => {
@@ -42,11 +42,13 @@ function useInterval(callback, delay, stopFlag) {
     }
     if (delay !== null && !stopFlag) {
       id = setInterval(tick, delay)
+      setIntervalId(id)
       return () => {
         clearInterval(id)
       }
     }
   })
+
 }
 
 async function loginToSymbl({ SYMBL_APP_SECRET, SYMBL_APP_ID }) {
@@ -74,19 +76,28 @@ const Summary = () => {
   const [status, setStatus] = useState('not started')
   const [messages, setMessages] = useState([])
   const [token, setToken] = useState(null)
+  const [intervalId, setIntervalId] = useState(null)
   const history = useHistory()
   const location = useLocation()
   const [loading, setLoading] = useState(true)
 
-  useEffect(async () => {
-    if (!location.state) history.push("/")
-    const tempFile = (location.state.detail)
-    loginToSymbl({ SYMBL_APP_ID, SYMBL_APP_SECRET }).then((data) => {
-      setToken(data);
-      const src = URL.createObjectURL(new Blob([file], { type: 'video/mp4' }))
-      setFile(tempFile)
-      setVideoSrc(src);
-    })
+  useEffect(() => {
+    if (!location.state) history.push("/dashboard")
+    if (location?.state?.detail) {
+      const tempFile = (location.state.detail)
+      console.log(tempFile)
+      loginToSymbl({ SYMBL_APP_ID, SYMBL_APP_SECRET }).then((data) => {
+        setToken(data);
+        const src = URL.createObjectURL(new Blob([file], { type: 'video/mp4' }))
+        setFile(tempFile)
+        setVideoSrc(src);
+      })
+    }
+    return () => {
+      for (var i = 1; i < 99999; i++)
+        window.clearInterval(i);
+
+    }
   }, [])
 
   useEffect(() => {
@@ -113,8 +124,8 @@ const Summary = () => {
     },
     1000,
     status === 'completed' || (status !== 'not_started' && !jobId),
+    setIntervalId
   )
-
   const getTranscripts = () => {
     fetch(`https://api.symbl.ai/v1/conversations/${conversationId}/messages`, {
       method: 'GET',

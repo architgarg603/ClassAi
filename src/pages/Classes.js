@@ -57,8 +57,8 @@ const Classes = () => {
         <PlusSquareIcon w={8} h={8} />
         <Text>New Class</Text>
       </HStack>
-      <Box p={"75px"}>
-        <Wrap spacing="118px">{cards}</Wrap>
+      <Box p={"20px"}>
+        <Wrap spacing="1px">{cards}</Wrap>
       </Box>
     </>
   );

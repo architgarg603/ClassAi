@@ -14,15 +14,19 @@ const Dashboard = () => {
       backgroundImage={banner}
       backgroundPosition={"top"}
       backgroundRepeat="no-repeat"
+      height={"250px"}
+      w={"100%"}
+      backgroundPosition={"top left"}
+      backgroundSize={"cover"}
     >
-      <Text mb={"250px"} color={"white"} fontSize={"6xl"} fontWeight={"bold"}>
+      <Text mb={"100px"} color={"white"} fontSize={"6xl"} fontWeight={"bold"}>
         BIO101: Intro to Biology
       </Text>
       <HStack spacing={"150px"}>
         <Link to="/lectures">
           <Box
-            maxW="301px"
-            maxH="362px"
+            minW="251px"
+            minH="280px"
             m={4}
             borderRadius="lg"
             overflow="hidden"
@@ -33,7 +37,7 @@ const Dashboard = () => {
           >
             <Box p="6">
               <Box mt="1" fontWeight="semibold" lineHeight="tight" isTruncated>
-                <Text color={"white"} fontSize={"24px"}>
+                <Text color={"white"} fontSize={"24px"} paddingLeft={"50px"}>
                   Lectures
                 </Text>
               </Box>
@@ -41,8 +45,8 @@ const Dashboard = () => {
           </Box>
         </Link>
         <Box
-          maxW="301px"
-          maxH="362px"
+          minW="251px"
+          minH="280px"
           m={4}
           borderRadius="lg"
           overflow="hidden"
@@ -53,15 +57,15 @@ const Dashboard = () => {
         >
           <Box p="6">
             <Box mt="1" fontWeight="semibold" lineHeight="tight" isTruncated>
-              <Text color={"white"} fontSize={"24px"}>
+              <Text color={"white"} fontSize={"24px"} paddingLeft={"50px"}>
                 Schedule
               </Text>
             </Box>
           </Box>
         </Box>
         <Box
-          maxW="301px"
-          maxH="362px"
+          minW="251px"
+          minH="280px"
           m={4}
           borderRadius="lg"
           overflow="hidden"
@@ -72,7 +76,7 @@ const Dashboard = () => {
         >
           <Box p="6">
             <Box mt="1" fontWeight="semibold" lineHeight="tight" isTruncated>
-              <Text color={"white"} fontSize={"24px"}>
+              <Text color={"white"} fontSize={"24px"} paddingLeft={"50px"}>
                 Syllabus
               </Text>
             </Box>
