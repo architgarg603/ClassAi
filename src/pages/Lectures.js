@@ -58,7 +58,7 @@ const Lectures = () => {
               We went over ur mom blah blah blah random description
             </Text>
           </Flex>
-          <Button size="lg" bg="brand.blue" color={"white"}>
+          <Button size="lg" bg="black" color={"white"}>
             <Link to="/videocall">
               Go to Lecture <ArrowForwardIcon ml={3} />
             </Link>
@@ -90,13 +90,15 @@ const Lectures = () => {
                 We went over ur mom blah blah blah random description
               </Text>
               <br />
-              <Text
-                fontSize={"20px"}
-                fontWeight={"semibold"}
-                color={"brand.blue"}
-              >
-                View Summary <ArrowForwardIcon />
-              </Text>
+              <Link to="/summary">
+                <Text
+                  fontSize={"20px"}
+                  fontWeight={"semibold"}
+                  color={"brand.blue"}
+                >
+                  View Summary <ArrowForwardIcon />
+                </Text>
+              </Link>
             </GridItem>
           </Grid>
           <Grid gap={10} templateColumns="repeat(13, 1fr)">
@@ -120,13 +122,15 @@ const Lectures = () => {
                 We went over ur mom blah blah blah random description
               </Text>
               <br />
-              <Text
-                fontSize={"20px"}
-                fontWeight={"semibold"}
-                color={"brand.blue"}
-              >
-                View Summary <ArrowForwardIcon />
-              </Text>
+              <Link to="/summary">
+                <Text
+                  fontSize={"20px"}
+                  fontWeight={"semibold"}
+                  color={"brand.blue"}
+                >
+                  View Summary <ArrowForwardIcon />
+                </Text>
+              </Link>
             </GridItem>
           </Grid>
         </Flex>

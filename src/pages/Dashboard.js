@@ -4,6 +4,8 @@ import syllabus from ".././assets/11.png";
 import schedule from ".././assets/14.png";
 import lectures from ".././assets/15.png";
 import banner from ".././assets/10.png";
+import { Link } from "react-router-dom";
+
 const Dashboard = () => {
   return (
     <Box
@@ -17,25 +19,27 @@ const Dashboard = () => {
         BIO101: Intro to Biology
       </Text>
       <HStack spacing={"150px"}>
-        <Box
-          maxW="301px"
-          maxH="362px"
-          m={4}
-          borderRadius="lg"
-          overflow="hidden"
-          boxSize={"sm"}
-          backgroundImage={schedule}
-          backgroundPosition="center"
-          backgroundRepeat="no-repeat"
-        >
-          <Box p="6">
-            <Box mt="1" fontWeight="semibold" lineHeight="tight" isTruncated>
-              <Text color={"white"} fontSize={"24px"}>
-                Lectures
-              </Text>
+        <Link to="/lectures">
+          <Box
+            maxW="301px"
+            maxH="362px"
+            m={4}
+            borderRadius="lg"
+            overflow="hidden"
+            boxSize={"sm"}
+            backgroundImage={schedule}
+            backgroundPosition="center"
+            backgroundRepeat="no-repeat"
+          >
+            <Box p="6">
+              <Box mt="1" fontWeight="semibold" lineHeight="tight" isTruncated>
+                <Text color={"white"} fontSize={"24px"}>
+                  Lectures
+                </Text>
+              </Box>
             </Box>
           </Box>
-        </Box>
+        </Link>
         <Box
           maxW="301px"
           maxH="362px"

@@ -15,6 +15,7 @@ import Videocall from "./pages/VideoCall/Videocall";
 import AppStateProvider, { useAppState } from "./pages/VideoCall/state";
 import { VideoProvider } from "./pages/VideoCall/components/VideoProvider";
 import generateConnectionOptions from "./pages/VideoCall/utils/generateConnectionOptions/generateConnectionOptions";
+import Summary from "./pages/Summary";
 
 const VideoApp = () => {
   const { setError, settings } = useAppState();
@@ -45,6 +46,7 @@ const App = () => {
           <Route exact path={"/dashboard"} component={Dashboard} />
           <Route exact path={"/"} component={Classes} />
           <Route exact path={"/details"} component={Details} />
+          <Route exact path={"/summary"} component={Summary} />
         </Switch>
       </AppStateProvider>
     </Router>

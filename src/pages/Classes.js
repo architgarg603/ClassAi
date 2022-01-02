@@ -7,6 +7,7 @@ import img2 from ".././assets/2.png";
 import img3 from ".././assets/3.png";
 import img4 from ".././assets/4.png";
 import img5 from ".././assets/5.png";
+import { Link } from "react-router-dom";
 
 const data = [
   {
@@ -40,11 +41,13 @@ const Classes = () => {
   const cards = data.map((item) => {
     return (
       <WrapItem>
-        <ClassCard
-          title={item.title}
-          subtitle={item.subtitle}
-          image={item.image}
-        />
+        <Link to="/dashboard">
+          <ClassCard
+            title={item.title}
+            subtitle={item.subtitle}
+            image={item.image}
+          />
+        </Link>
       </WrapItem>
     );
   });
