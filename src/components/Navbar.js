@@ -43,7 +43,12 @@ export default function WithSubnavigation() {
           ml={{ base: -2 }}
           display={{ base: "flex", md: "none" }}
         ></Flex>
-        <HamburgerIcon w={8} h={8} mx={4} color={useColorModeValue("white", "black")} />
+        <HamburgerIcon
+          w={8}
+          h={8}
+          mx={4}
+          color={useColorModeValue("white", "black")}
+        />
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
@@ -52,7 +57,7 @@ export default function WithSubnavigation() {
             fontSize={"24px"}
             color={useColorModeValue("white", "black")}
           >
-            EdPortal
+            Classai
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -72,7 +77,7 @@ export default function WithSubnavigation() {
             fontWeight={400}
             variant={"link"}
             href={"#"}
-            color={'white'}
+            color={"white"}
           >
             Sign In
           </Button>
