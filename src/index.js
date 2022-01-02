@@ -13,6 +13,7 @@ ReactDOM.render(
       <App />
     </React.StrictMode>
   </ChakraProvider>,
+
   document.getElementById("root")
 );
 

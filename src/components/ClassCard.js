@@ -4,34 +4,38 @@ import { Box, Image } from "@chakra-ui/react";
 const ClassCard = (props) => {
   return (
     <Box
-      maxW="xs"
-      maxH="2xs"
+      maxW="336px"
+      maxH="230px"
       m={4}
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
       boxSize={"sm"}
+      backgroundImage={props.image}
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
     >
-      {/*<Image src={"https://bit.ly/2Z4KKcF"} alt={"nothing"} /> */}
-      <Box p="6" pt={"175px"}>
+      <Box p="6" pt={"150px"}>
         <Box
           mt="1"
           fontWeight="semibold"
           as="h4"
           lineHeight="tight"
+          color={"white"}
+          fontSize={"md"}
           isTruncated
         >
           {props.title}
         </Box>
 
         <Box>
-          <Box as="span" color="gray.600" fontSize="sm">
+          <Box as="span" color="white" fontSize="sm">
             {props.subtitle}
           </Box>
         </Box>
 
-        <Box display="flex" mt="2" alignItems="center">
-          <Box as="span" ml="2" color="gray.600" fontSize="sm"></Box>
+        <Box display="flex" alignItems="center">
+          <Box as="span" ml="2" color="white" fontSize="sm"></Box>
         </Box>
       </Box>
     </Box>
